@@ -7,6 +7,7 @@ export interface UsersData {
   typeName: string;
 }
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,9 +20,11 @@ export class JobTypeService {
   }
 
   createJobType(user: UsersData){
+
     console.log(user.id)
     console.log(user.typeName)
     this.http.post('//whispering-spire-53803.herokuapp.com/job_types/add', 
+
     {
       "id": user.id,
       "typeName": user.typeName
@@ -38,6 +41,15 @@ export class JobTypeService {
   deleteJobType(id:number){
     return this.http.delete(`//whispering-spire-53803.herokuapp.com/job_types/delete/${id}`, { responseType: 'text' }).subscribe(data => {
       console.log(data);
-  });
-}
+    }); 
+  }
+
+  updateJobType(user: UsersData){
+    return this.http.post(`//localhost:8080/job_types/update/${user.id}`, user).subscribe(data => {
+      console.log("POST Request is successful ", data);
+    }, error => {
+      console.log("Error ", error);
+    });
+  }
+
 }

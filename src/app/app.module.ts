@@ -12,12 +12,14 @@ import { RegisterComponent } from './components/register/register/register.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
-import { fakeBackendProvider } from './helpers/fake-backend';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { DialogBoxNewAttendanceComponent } from './modules/dialogBoxNewAttendance/dialog-box-new-attendance/dialog-box-new-attendance.component';
+
+
 
 
 
@@ -29,6 +31,9 @@ application along with metadata about the module*/
     AlertComponent,
     LoginComponent,
     RegisterComponent,
+   
+    
+   
    
    
     

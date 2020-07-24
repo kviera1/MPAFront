@@ -4,7 +4,7 @@
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field> -->
-<input type="date" [ngModel]="startDate | date:'yyyy-MM-dd'" (ngModelChange)="startDate = $event" (ngModelChange)="addEvent()"type="date" name="startDate"/>
+<div><input type="date" [ngModel]="startDate | date:'yyyy-MM-dd'" (ngModelChange)="startDate = $event" (ngModelChange)="addEvent()"type="date" name="startDate"/></div>
 <mat-tab-group>
     <mat-tab label="Attendance">
      
@@ -59,12 +59,15 @@
                 <a (click)="openDialog('Delete',element,'test')">Delete</a>  
               </td>
             </ng-container>
+
+           
         
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
-          
+          <button   (click)="openNewAttendance('Add')" type = "button"  id="add">Click Here to Add New Attendance</button>
           </div>
     </mat-tab>
+    
 
 </mat-tab-group>
