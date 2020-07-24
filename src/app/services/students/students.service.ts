@@ -10,6 +10,6 @@ export class StudentsService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/students');
+    return this.http.get('//whispering-spire-53803.herokuapp.com/students');
   }
 }

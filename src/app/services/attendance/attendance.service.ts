@@ -23,11 +23,11 @@ export class AttendanceService {
 
   getAll(): Observable<any> {
     
-    return this.http.get('//localhost:8080/attendance/all');
+    return this.http.get('//whispering-spire-53803.herokuapp.com/attendance/all');
   }
   getTodaysAttendance(date:string): Observable<any> {
     
-    return this.http.get('//localhost:8080/attendance/today',{params:{date}});
+    return this.http.get('//whispering-spire-53803.herokuapp.com/attendance/today',{params:{date}});
   }
 
   createAttendance(attendance: AttendanceData){
@@ -35,7 +35,7 @@ export class AttendanceService {
     console.log(attendance.absence_date)
     console.log(attendance.hours_missed)
     console.log(attendance.code_id)
-    this.http.post('//localhost:8080/attendance/add', 
+    this.http.post('//whispering-spire-53803.herokuapp.com/attendance/add', 
     {
       "id": attendance.id,
       "employee_id":attendance.employee_id,
@@ -53,13 +53,13 @@ export class AttendanceService {
   } 
 
   deleteAttendance(id:number){
-    return this.http.delete(`//localhost:8080/attendance/delete/${id}`, { responseType: 'text' }).subscribe(data => {
+    return this.http.delete(`//whispering-spire-53803.herokuapp.com/attendance/delete/${id}`, { responseType: 'text' }).subscribe(data => {
       console.log(data);
   });
  
 }
 updateAttendance(attendance:Attendance){
-  return this.http.post('//localhost:8080/attendance/update',attendance, {responseType: 'text'}).subscribe(data =>{
+  return this.http.post('//whispering-spire-53803.herokuapp.com/attendance/update',attendance, {responseType: 'text'}).subscribe(data =>{
    
       console.log("POST Request is successful ", data);
       },
