@@ -45,7 +45,7 @@ export class JobTypeService {
   }
 
   updateJobType(user: UsersData){
-    return this.http.post(`//whispering-spire-53803.herokuapp.com/job_types/update/${user.id}`, user).subscribe(data => {
+    return this.http.post(`//localhost:8080/job_types/update/${user.id}`, user).subscribe(data => {
       console.log("POST Request is successful ", data);
     }, error => {
       console.log("Error ", error);

@@ -9,7 +9,7 @@ export class JobsService {
   constructor(private http: HttpClient) { }
 
   deleteJob(id:number){
-    return this.http.delete(`//whispering-spire-53803.herokuapp.com/jobs/delete/${id}`, { responseType: 'text' }).subscribe(data => {
+    return this.http.delete(`//localhost:8080/jobs/delete/${id}`, { responseType: 'text' }).subscribe(data => {
       console.log(data);
     });
   }

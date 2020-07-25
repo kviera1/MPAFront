@@ -25,7 +25,7 @@ export class EmployeeService {
 
   getAll(): Observable<any> {
     
-    return this.http.get('//whispering-spire-53803.herokuapp.com/employee/all');
+    return this.http.get('//localhost:8080/employee/all');
   }
   createEmployee(employee: EmployeeData){
     console.log(employee.employee_id)
@@ -35,7 +35,7 @@ export class EmployeeService {
     console.log(employee.shift)
   
    
-    this.http.post('//whispering-spire-53803.herokuapp.com/employee/add', 
+    this.http.post('//localhost:8080/employee/add', 
     {
       "employee_id": employee.employee_id,
       "first_name":employee.first_name,

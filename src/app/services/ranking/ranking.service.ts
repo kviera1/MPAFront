@@ -10,11 +10,11 @@ export class RankingService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get('//whispering-spire-53803.herokuapp.com/ranking/all');
+    return this.http.get('//localhost:8080/ranking/all');
   }
 
   updateAll(rankingList:Array<any>){
-    this.http.post('//whispering-spire-53803.herokuapp.com/ranking/update_all', 
+    this.http.post('//localhost:8080/ranking/update_all', 
     rankingList)
     .subscribe(
       data  => {
