@@ -15,7 +15,7 @@ export class JobService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get('//whispering-spire-53803.herokuapp.com/')
+    return this.http.get('//whispering-spire-53803.herokuapp.com/jobs/all')
   }
 
   createJob(user: UsersData){
@@ -36,9 +36,7 @@ export class JobService {
   } 
 
   deleteJob(id:number){
-    return this.http.delete(`//whispering-spire-53803.herokuapp.com/')
-
-jobs/delete/${id}`, { responseType: 'text' }).subscribe(data => {
+    return this.http.delete(`//whispering-spire-53803.herokuapp.com/jobs/delete/${id}`, { responseType: 'text' }).subscribe(data => {
       console.log(data);
   });
 }
