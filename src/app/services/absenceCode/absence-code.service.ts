@@ -16,7 +16,8 @@ export class AbsenceCodeService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/attendance_code/all');
+    return this.http.get('
+//whispering-spire-53803.herokuapp.com/attendance_code/all');
   }
 
  

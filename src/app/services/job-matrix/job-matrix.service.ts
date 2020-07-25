@@ -17,7 +17,8 @@ export class JobMatrixService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/employee_matrix/all');
+    return this.http.get('
+//whispering-spire-53803.herokuapp.com/employee_matrix/all');
   }
 
   createJobMatrix(jobMatrix: JobMatrixData){
@@ -26,7 +27,8 @@ export class JobMatrixService {
     console.log(jobMatrix.job_id)
     console.log(jobMatrix.job_knowledge)
  
-    this.http.post('//localhost:8080/employee_matrix/add', 
+    this.http.post('
+//whispering-spire-53803.herokuapp.com/employee_matrix/add', 
     {
       "entry_id": jobMatrix.entry_id,
       "employee_id": jobMatrix.employee_id,
@@ -43,7 +45,8 @@ export class JobMatrixService {
   } 
 
   deleteJobMatrix(id:number){
-    return this.http.delete(`//localhost:8080/employee_matrix/delete/${id}`, { responseType: 'text' }).subscribe(data => {
+    return this.http.delete(`
+//whispering-spire-53803.herokuapp.com/employee_matrix/delete/${id}`, { responseType: 'text' }).subscribe(data => {
       console.log(data);
   });
 }
